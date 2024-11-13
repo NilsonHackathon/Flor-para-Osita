@@ -347,5 +347,39 @@
         <div class="signature">
             <h3>Nilson José Saballos Arana.</h3>
         </div>
+
+        <!-- Contenedor del reproductor de música -->
+        <div class="music-player">
+            <img class="album-cover" src="disco.png" alt="Album Cover">
+            <div class="info">
+                <p class="song-title">Flor palida</p>
+                <button class="play-pause-btn">Play</button>
+            </div>
+        </div>
+
+        <!-- Archivo de audio -->
+        <audio id="audio-player">
+            <source src="Marc_Anthony_Flor_Palida.mp3" type="audio/mp3">
+        </audio>
+
+        <script>
+            // Control de reproducción
+            const audio = document.getElementById('audio-player');
+            const playPauseBtn = document.querySelector('.play-pause-btn');
+            const albumCover = document.querySelector('.album-cover');
+
+            playPauseBtn.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play();
+                    playPauseBtn.textContent = 'Pause';
+                    albumCover.classList.add('rotate');
+                } else {
+                    audio.pause();
+                    playPauseBtn.textContent = 'Play';
+                    albumCover.classList.remove('rotate');
+                }
+            });
+        </script>
+
     </body>
 </html>

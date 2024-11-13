@@ -1003,3 +1003,63 @@ animation: growing-grass-ans 1s 2s backwards;
 .not-loaded * {
 animation-play-state: paused !important;
 }
+
+/*Musica*/
+/* Reproductor de música */
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.album-cover {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: transform 0.5s linear;
+}
+
+.album-cover.rotate {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.music-player .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.song-title {
+    font-size: 14px;
+    color: white;
+    margin: 0;
+}
+
+.play-pause-btn {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #ff0077;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.play-pause-btn:hover {
+    background-color: #ff3399;
+}
